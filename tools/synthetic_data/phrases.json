@@ -1,0 +1,320 @@
+{
+    "home_or_away": {
+        "NONE": [
+            [""]
+        ],
+        "HOME": [
+            ["home"]
+        ],
+        "AWAY": [
+            ["away"],
+            ["road"]
+        ]
+    },
+    "start_or_bench": {
+        "NONE": [
+            [""]
+        ],
+        "START": [
+            ["start"],
+            ["starts"],
+            ["started"],
+            ["starting"]
+        ],
+        "BENCH": [
+            ["off", "bench"],
+            ["bench"],
+            ["benched"]
+        ]
+    },
+    "win_or_loss": {
+        "NONE": [
+            [""]
+        ],
+        "WIN": [
+            ["won"],
+            ["win"],
+            ["wins"],
+            ["winning"]
+        ],
+        "LOSS": [
+            ["loss"],
+            ["lost"],
+            ["losing"],
+            ["losses"]
+        ]
+    },
+    "opp": {
+        "NONE": [
+            [""]
+        ],
+        "OPP": [
+            [["vs","versus","against"],"<TEAM>"]
+        ]
+    },
+    "playoffs": {
+        "NONE": [
+            [""]
+        ],
+        "PLAYOFFS": [
+            ["playoff"],
+            ["playoffs"],
+            ["postseason"],
+            ["post"]
+        ]
+    },
+    "dates": {
+        "NONE": [
+            [""]
+        ],
+        "DATE": [
+            ["DATE-A"],
+            ["DATE-B"]
+        ],
+        "BEFORE_DATE": [
+            ["before",["DATE-A","DATE-B"]]
+        ],
+        "AFTER_DATE": [
+            ["after", ["DATE-A","DATE-B"]]
+        ]
+    },
+    "stats": {
+        "STAT-GAME_COUNT": [
+            ["number"],
+            ["games",["count","played"]]
+        ],
+        "STAT-TOT_TIME": [
+            ["total","time"]
+        ],
+        "STAT-AVG_TIME": [
+            ["<AVERAGE>",["minutes","time"]],
+            ["minutes","game"]
+        ],
+        "STAT-TOT_FG": [
+            ["<TOTAL>","<FG>"]
+        ],
+        "STAT-AVG_FG": [
+            ["<AVERAGE>","<FG>"],
+            ["<FG>","game"]
+        ],
+        "STAT-TOT_FGA": [
+            ["<TOTAL>","<FG>",["attempt","attempts"]],
+            ["<TOTAL>","fga"]
+        ],
+        "STAT-AVG_FGA": [
+            ["<AVERAGE>","<FG>",["attempt","attempts"]],
+            ["<AVERAGE>","fga"],
+            ["<FG>",["attempt","attempts"],"game"],
+            ["fga","game"]
+        ],
+        "STAT-FG_PCT": [
+            ["<FG>","<PERCENT>"],
+            ["fg%"]
+        ],
+        "STAT-TOT_FG3": [
+            ["<TOTAL>",["three","3"],["pointer","pointers"]],
+            ["<TOTAL>","<3PT>","<FG>"]
+        ],
+        "STAT-AVG_FG3": [
+            ["<AVERAGE>",["three","3"],["pointer","pointers"]],
+            ["<AVERAGE>","<3PT>","<FG>"],
+            [["three","3"],["pointer","pointers"],"game"],
+            ["<3PT>","<FG>","game"]
+        ],
+        "STAT-TOT_FG3A": [
+            ["<TOTAL>",["three","3"],["pointer","pointers"],["attempt","attempts"]],
+            ["<TOTAL>","<3PT>","<FG>"]
+        ],
+        "STAT-AVG_FG3A": [
+            ["<AVERAGE>",["three","3"],["pointer","pointers"],["attempt","attempts"]],
+            ["<AVERAGE>","<3PT>","<FG>",["attempt","attempts"]],
+            [["three","3"],["pointer","pointers"],["attempt","attempts"],"game"],
+            ["<3PT>","<FG>","game"]
+        ],
+        "STAT-FG3_PCT": [
+            ["<3PT>","<FG>","<PERCENT>"],
+            [["three","3"],["pointer","pointers"],"<PERCENT>"],
+            ["3pt%"]
+        ],
+        "STAT-TOT_FT": [
+            ["<TOTAL>",["ft","free throw","free throws"]]
+        ],
+        "STAT-AVG_FT": [
+            ["<AVERAGE>",["ft","free throw","free throws"]],
+            [["ft","free throw","free throws"],"game"]
+        ],
+        "STAT-TOT_FTA": [
+            ["<TOTAL>",["ft","free throw","free throws"],["attempt","attempts"]]
+        ],
+        "STAT-AVG_FTA": [
+            ["<AVERAGE>",["ft","free throw","free throws"],["attempt","attempts"]],
+            [["ft","free throw","free throws"],["attempt","attempts"],"game"]
+        ],
+        "STAT-FT_PCT": [
+            [["ft","free throw","free throws"],"<PERCENT>"],
+            ["ft%"]
+        ],
+        "STAT-TOT_PTS": [
+            ["<TOTAL>","<POINTS>"]
+        ],
+        "STAT-AVG_PTS": [
+            ["<AVERAGE>","<POINTS>"],
+            ["<POINTS>", "game"],
+            ["ppg"]
+        ],
+        "STAT-TOT_ORB": [
+            ["<TOTAL>","<OFFENSE>","<REBOUND>"]
+        ],
+        "STAT-AVG_ORB": [
+            ["<AVERAGE>","<OFFENSE>","<REBOUND>"],
+            ["<OFFENSE>","<REBOUND>","game"]
+        ],
+        "STAT-TOT_DRB": [
+            ["<TOTAL>","<DEFENSE>","<REBOUND>"]
+        ],
+        "STAT-AVG_DRB": [
+            ["<AVERAGE>","<DEFENSE>","<REBOUND>"],
+            ["<DEFENSE>","<REBOUND>","game"]
+        ],
+        "STAT-TOT_REB": [
+            ["<TOTAL>","<REBOUND>"]
+        ],
+        "STAT-AVG_REB": [
+            ["<AVERAGE>","<REBOUND>"],
+            ["<REBOUND>","game"]
+        ],
+        "STAT-TOT_AST": [
+            ["<TOTAL>","<ASSIST>"],
+            ["<ASSIST>","<TOTAL>"]
+        ],
+        "STAT-AVG_AST": [
+            ["<AVERAGE>","<ASSIST>"],
+            ["<ASSIST>","game"]
+        ],
+        "STAT-TOT_BLK": [
+            ["<TOTAL>","<BLOCK>"]
+        ],
+        "STAT-AVG_BLK": [
+            ["<AVERAGE>","<STEAL>"],
+            ["<STEAL>","game"]
+        ],
+        "STAT-TOT_STL": [
+            ["<TOTAL>","<STEAL>"]
+        ],
+        "STAT-AVG_STL": [
+            ["<AVERAGE>","<STEAL>"],
+            ["<STEAL>","game"]
+        ],
+        "STAT-TOT_TOV": [
+            ["<TOTAL>",["foul","fouls"]]
+        ],
+        "STAT-AVG_TOV": [
+            ["<AVERAGE>",["turnover","turnovers"]],
+            [["turnover","turnovers"],"game"]
+        ],
+        "STAT-TOT_PF": [
+            ["<TOTAL>",["foul","fouls"]]
+        ],
+        "STAT-AVG_PF": [
+            ["<AVERAGE>",["foul","fouls"]],
+            [["foul","fouls"],"game"]
+        ],
+        "STAT-PLUS_MIN": [
+            ["plus",["min","minus"]],
+            ["+/-"]
+        ],
+        "STAT-USG": [
+            ["usg", "usage"],
+            [["usg", "usage"],"<PERCENT>"],
+            [["usg", "usage"],["rtg","rating"]]
+        ],
+        "STAT-ORTG": [
+            ["ortg"],
+            ["<OFFENSE>",["rtg","rating"]]
+        ],
+        "STAT-DRTG": [
+            ["drtg"],
+            ["<DEFENSE>",["rtg","rating"]]
+        ],
+        "STAT-TS": [
+            ["ts"],
+            ["ts%"],
+            ["ts", "<PERCENT>"],
+            ["true", "shooting"]
+        ]
+    },
+    "TOTAL": [
+        "total",
+        "totals"
+    ],
+    "AVERAGE": [
+        "avg",
+        "average"
+    ],
+    "FG": [
+        "fg",
+        "fgs",
+        "shot",
+        "shots",
+        "shooting",
+        "field goal",
+        "field goals"
+    ],
+    "POINTS": [
+        "pt",
+        "pts",
+        "point",
+        "points"
+    ],
+    "3PT": [
+        "3pt",
+        "3pts",
+        "3 pt",
+        "3 pts",
+        "3 point",
+        "3 points",
+        "three pt",
+        "three pts",
+        "three point",
+        "three points"
+    ],
+    "OFFENSE": [
+        "off",
+        "offense",
+        "offensive"
+    ],
+    "DEFENSE": [
+        "def",
+        "defense",
+        "defensive"
+    ],
+    "REBOUND": [
+        "reb",
+        "rebs",
+        "rebound",
+        "rebounds"
+    ],
+    "ASSIST": [
+        "ast",
+        "asts",
+        "assist",
+        "assists"
+    ],
+    "BLOCK": [
+        "block",
+        "blocks"
+    ],
+    "STEAL": [
+        "stl",
+        "stls",
+        "steal",
+        "steals"
+    ],
+    "PERCENT": [
+        "%",
+        "%age",
+        "pct",
+        "percent",
+        "percentage"
+    ]
+}
