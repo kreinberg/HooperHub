@@ -98,7 +98,12 @@ def generate_example():
 
     # select a date phrase
     date_key = choice(list(JSON_PHRASES['dates'].keys()))
-    if date_key != "NONE":
+    if date_key == "DATE":
+        dates = sample(JSON_PHRASES['dates'][date_key], choice([1,2]))
+        for date in dates:
+            date_value = flatten_date_phrase(date)
+            phrases[date_value[0]] = date_value
+    elif date_key != "NONE":
         date_phrase = choice(JSON_PHRASES['dates'][date_key])
         date_value = flatten_date_phrase(date_phrase)
         phrases[date_key] = date_value

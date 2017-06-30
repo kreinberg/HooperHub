@@ -289,14 +289,10 @@
         "defensive"
     ],
     "REBOUND": [
-        "reb",
-        "rebs",
         "rebound",
         "rebounds"
     ],
     "ASSIST": [
-        "ast",
-        "asts",
         "assist",
         "assists"
     ],
@@ -305,8 +301,6 @@
         "blocks"
     ],
     "STEAL": [
-        "stl",
-        "stls",
         "steal",
         "steals"
     ],
