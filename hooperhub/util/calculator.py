@@ -315,7 +315,7 @@ class Calculator(object):
         tot_pts = (tot_fg-tot_fg3) * 2 + tot_fg3 * 3 + tot_ft
         tot_fga = self.rudimentary_stats['sum(fga)']
         tot_fta = self.rudimentary_stats['sum(fta)']
-        ts = str(round((tot_pts / (tot_fga + 0.44*fta))*100, 2))+'%'
+        ts = str(round((tot_pts / (2*(tot_fga + 0.44*tot_fta)))*100, 2))+'%'
         return "True Shooting", ts
 
 
