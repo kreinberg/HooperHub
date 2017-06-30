@@ -120,7 +120,6 @@ class Interpreter(object):
         # playoff_rd condition
         playoff_str = " AND playoff_rd"
         if self._entity_table.playoff_rd == 0:
-            cond_tok["Playoffs?"] = "No"
             playoff_str += "=0"
         else:
             cond_tok["Playoffs?"] = "Yes"
@@ -152,7 +151,7 @@ class Interpreter(object):
         # started_game condition
         if self._entity_table.started_game != None:
             started_game_str = " AND started="
-            if self._entity_talbe.started_game:
+            if self._entity_table.started_game:
                 cond_tok["Started?"] = "Yes"
                 started_game_str += "true"
             else:
@@ -212,8 +211,12 @@ class Interpreter(object):
         start_date = self._entity_table.start_date
         end_date = self._entity_table.end_date
         self.cursor.execute(query, (start_date, end_date))
-        results = eval(self.cursor.fetchone()[0])
-
+        res = self.cursor.fetchone()[0]
+        if type(res) != str:
+            print('here')
+            results = (res,)
+        else:
+            results = eval(res)
         # pass all of the query results into a Calculator
         result_entitys = {}
         rudimentary_stats = dict(zip(columns.split(','), results))

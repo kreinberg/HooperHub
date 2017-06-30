@@ -22,6 +22,7 @@ if __name__ == '__main__':
         try:
             lexer = Lexer(raw_sentence)
             ent_tags = lexer.decode()
+            print("Output tags: ", end='')
             print(ent_tags)
             ent_tab = lexer.parse(ent_tags)
             pt = PrettyTable(['entity name', 'entity value'])

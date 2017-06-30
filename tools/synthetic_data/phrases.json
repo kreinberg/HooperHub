@@ -195,15 +195,15 @@
             ["<TOTAL>","<BLOCK>"]
         ],
         "STAT-AVG_BLK": [
-            ["<AVERAGE>","<STEAL>"],
-            ["<STEAL>","game"]
+            ["<AVERAGE>","<BLOCK>"],
+            ["<BLOCK>","game"]
         ],
         "STAT-TOT_STL": [
             ["<TOTAL>","<STEAL>"]
         ],
         "STAT-AVG_STL": [
-            ["<AVERAGE>","<BLOCK>"],
-            ["<BLOCK>","game"]
+            ["<AVERAGE>","<STEAL>"],
+            ["<STEAL>","game"]
         ],
         "STAT-TOT_TOV": [
             ["<TOTAL>",["foul","fouls"]]

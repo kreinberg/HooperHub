@@ -174,12 +174,20 @@ class Lexer(object):
             entity_table.player_name = ' '.join(entity)
         if entity_name == 'PLAYOFFS':
             entity_table.playoff_rd = 1
-        if entity_name.startswith('DATE'):
-            self.computed_dates.append(self.dates[entity[0]])
+        if entity_name == 'DATE-A':
+            self.computed_dates.append(self.dates['DATE-A'])
+        if entity_name == 'DATE-B':
+            self.computed_dates.append(self.dates['DATE-B'])
         if entity_name == 'BEFORE_DATE':
-            entity_table.end_date = self.dates[entity[1]]
+            if 'DATE-A' in entity:
+                entity_table.end_date = self.dates['DATE-A']
+            elif 'DATE-B' in entity:
+                entity_table.end_date = self.dates['DATE-B']
         if entity_name == 'AFTER_DATE':
-            entity_table.start_date = self.dates[entity[1]]
+            if 'DATE-A' in entity:
+                entity_table.start_date = self.dates['DATE-A']
+            elif 'DATE-B' in entity:
+                entity_table.start_date = self.dates['DATE-B']
         if entity_name == 'HOME':
             entity_table.home_game = True
         if entity_name == 'AWAY':
@@ -210,23 +218,26 @@ class Lexer(object):
         s_len = len(self.sentence_txt)
         idx = 0
         et_dict = defaultdict(list)
+        # ensure that loop will break after 50 loops
+        safety = 0
         while idx < s_len:
+            if safety > 50:
+                break
             if tags[idx].startswith('B'):
                 tag_name = tags[idx][2:]
-                if tag_name == "DATE":
-                    tag_name += str(idx)
                 et_dict[tag_name].append(self.sentence_txt[idx])
                 idx += 1
                 while idx < s_len and tags[idx].startswith('I'):
                     et_dict[tag_name].append(self.sentence_txt[idx])
                     idx += 1
+            safety += 1
         for k,v in et_dict.items():
             self._read_entity(entity_table, k,v)
         self.computed_dates = sorted(self.computed_dates)
         if "SEASON" in self.dates:
             season = self.dates["SEASON"]
-            entity_table.start_date = datetime(season, 10, 1)
-            entity_table.end_date = datetime(season+1, 7, 1)
+            entity_table.start_date = datetime(season, 10, 1).date()
+            entity_table.end_date = datetime(season+1, 7, 1).date()
         elif len(self.computed_dates) == 1:
             entity_table.start_date = self.computed_dates[0] - timedelta(days=1)
             entity_table.end_date = self.computed_dates[0] + timedelta(days=1)
