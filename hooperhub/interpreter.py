@@ -180,7 +180,6 @@ class Interpreter(object):
             cond_tok["Before"] = str(self._entity_table.end_date)
         cond_str += " AND game_date>%s AND game_date<%s"
 
-        # change After/Before strings with "Season" if applicable
         start_year = self._entity_table.start_date.year
         end_year = self._entity_table.end_date.year
         if (end_year-start_year == 1 and
@@ -188,8 +187,10 @@ class Interpreter(object):
             self._entity_table.start_date.day == 1 and
             self._entity_table.end_date.month == 7 and
             self._entity_table.end_date.day == 1):
-            del cond_tok["After"]
-            del cond_tok["Before"]
+            if "After" in cond_tok:
+                del cond_tok["After"]
+            if "Before" in cond_tok:
+                del cond_tok["Before"]
             cond_tok["Season"] = str(end_year)
 
         return cond_tok, cond_str
