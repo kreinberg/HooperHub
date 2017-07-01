@@ -144,7 +144,7 @@ class Interpreter(object):
                 cond_tok["Home/Away"] = "Home"
                 home_game_str += "true"
             else:
-                cond_tok["Home/Away"] = "Loss"
+                cond_tok["Home/Away"] = "Away"
                 home_game_str += "false"
             cond_str += home_game_str
 
@@ -179,6 +179,20 @@ class Interpreter(object):
         if self._entity_table.end_date != datetime.date.today():
             cond_tok["Before"] = str(self._entity_table.end_date)
         cond_str += " AND game_date>%s AND game_date<%s"
+
+        # change After/Before strings with "Season" if applicable
+        start_year = self._entity_table.start_date.year
+        end_year = self._entity_table.end_date.year
+        print("end_year: "+str(end_year))
+        if (end_year-start_year == 1 and
+            self._entity_table.start_date.month == 10 and
+            self._entity_table.start_date.day == 1 and
+            self._entity_table.end_date.month == 7 and
+            self._entity_table.end_date.day == 1):
+            print("GOT HERE")
+            del cond_tok["After"]
+            del cond_tok["Before"]
+            cond_tok["Season"] = str(end_year)
 
         return cond_tok, cond_str
 
