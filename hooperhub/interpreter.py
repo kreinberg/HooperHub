@@ -183,13 +183,11 @@ class Interpreter(object):
         # change After/Before strings with "Season" if applicable
         start_year = self._entity_table.start_date.year
         end_year = self._entity_table.end_date.year
-        print("end_year: "+str(end_year))
         if (end_year-start_year == 1 and
             self._entity_table.start_date.month == 10 and
             self._entity_table.start_date.day == 1 and
             self._entity_table.end_date.month == 7 and
             self._entity_table.end_date.day == 1):
-            print("GOT HERE")
             del cond_tok["After"]
             del cond_tok["Before"]
             cond_tok["Season"] = str(end_year)
@@ -227,7 +225,6 @@ class Interpreter(object):
         self.cursor.execute(query, (start_date, end_date))
         res = self.cursor.fetchone()[0]
         if type(res) != str:
-            print('here')
             results = (res,)
         else:
             results = eval(res)
