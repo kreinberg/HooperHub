@@ -1,4 +1,6 @@
 # HooperHub
+Try it out at [hooperhub.io](http://hooperhub.io)!
+<img src="screenshot.jpg" />
 ### Requirements
 - python >3.5
 - python3-pip
@@ -30,4 +32,4 @@ After training, let's run the demo!
 ```
 $ python run_me.py
 ```
-Note: The demo won't give any actual results since that requires access to the database. Instead, the demo produces the information that it would query to the database if there was one.
+Note: The demo won't give any actual results since that requires access to the database. Instead, the demo produces the information that it would query to the database if there was one. For a demo that actually calculates statistics visit [hooperhub.io](http://hooperhub.io)!
